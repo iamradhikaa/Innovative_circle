@@ -1,120 +1,137 @@
-/* Full-Screen Background */
-body {
-    background: url('../images/about.png') no-repeat center center/cover;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    /* Clean and modern font */
-    color: #ffffff;
-    /* White text for clarity */
-    overflow: hidden;
-    /* Prevent scrolling on the body */
-    margin: 0;
-}
 
-/* Full-Screen Container for Text */
-.container {
-    background: rgba(0, 0, 0, 0.5);
-    /* Semi-transparent dark overlay for readability */
-    padding: 50px;
-    width: 100%;
-    height: 100%;
+body {
+    background: url('../images/about.png');
+    background-repeat: no-repeat;  /* Prevents the image from repeating */
+    background-size: cover;        /* Ensures the image covers the entire background */
+    background-position: center;   /* Centers the image within the background */
+    height: 100vh;                 /* Ensures the background covers the entire viewport height */
+    font-family: 'Poppins', sans-serif;
+    color: #675f5f;
+    overflow: hidden;
+    margin: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    /* Align items to the top */
+  }
+  
+  
+  
+  
+  .container {
+    background: rgba(65, 66, 67, 0.8); /* Slight opacity for contrast */
+    padding: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    position: absolute;
-    /* Ensures it covers the entire screen */
-    top: 0;
+    position: absolute; /* Make it positioned relative to the body */
+    top: 100px; /* Increase this value to create space between navbar and container */
     left: 0;
     z-index: 1;
     box-sizing: border-box;
     animation: fadeInUp 1.5s ease-in-out;
     overflow-y: auto;
-    /* Allows vertical scrolling */
     padding-right: 15px;
-    /* Space for scrollbar */
-}
-
-/* Stylish Heading */
-h1 {
+    max-height: calc(100vh - 100px); /* Ensures the container doesn't cover the whole screen */
+  }
+  
+  /* Optional: Fade-in animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  
+  /* Optional: Fade-in animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  
+  /* Optional: Fade-in animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  
+  h1 {
     font-size: 3rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #f8d210;
-    /* Warm gold for contrast */
     text-shadow: 2px 2px 10px rgba(255, 215, 0, 0.6);
     opacity: 0;
     transform: translateY(-30px);
     animation: slideIn 1.5s ease-in-out forwards;
-}
-
-/* Animated Paragraphs */
-p {
+  }
+  
+  p {
     font-size: 1.2rem;
     line-height: 1.6;
     text-align: justify;
     color: #f5f5f5;
-    /* Soft white */
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInUp 1.5s ease-in-out forwards 1s;
     max-width: 900px;
     margin: 10px auto;
-}
-
-/* Keyframe Animations */
-@keyframes fadeInUp {
+  }
+  
+  @keyframes fadeInUp {
     from {
-        opacity: 0;
-        transform: translateY(50px);
+      opacity: 0;
+      transform: translateY(50px);
     }
-
     to {
-        opacity: 1;
-        transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
     }
-}
-
-@keyframes slideIn {
+  }
+  
+  @keyframes slideIn {
     from {
-        opacity: 0;
-        transform: translateY(-30px);
+      opacity: 0;
+      transform: translateY(-30px);
     }
-
     to {
-        opacity: 1;
-        transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
     }
-}
-
-/* Basic Reset and Layout */
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background: #f9f9f9;
-    /* Light background for the page */
-}
-
-/* Services Section */
-.services {
+  }
+  
+  .services {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
     padding: 40px;
     justify-items: center;
     background: #ffffff;
-}
-
-/* Service Item Styling */
+  }
 .service-item {
     background: #f4f4f4;
     padding: 20px;
@@ -124,12 +141,12 @@ body {
     transition: transform 0.3s ease;
 }
 
-/* Hover Effect */
+
 .service-item:hover {
     transform: translateY(-10px);
 }
 
-/* Service Image Styling */
+
 .service-image {
     max-width: 100%;
     height: auto;
@@ -137,7 +154,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* Heading */
+
 .service-item h2 {
     font-size: 1.8rem;
     color: #333;
@@ -146,24 +163,24 @@ body {
     font-weight: bold;
 }
 
-/* Paragraph Text */
+
 .service-item p {
     font-size: 1rem;
     color: #555;
     line-height: 1.6;
 }
 
-/* Responsive Adjustments */
+
 @media (max-width: 768px) {
     .services {
         grid-template-columns: 1fr 1fr;
-        /* Two columns for smaller screens */
+       
     }
 }
 
 @media (max-width: 480px) {
     .services {
         grid-template-columns: 1fr;
-        /* One column for mobile screens */
+       
     }
 }
