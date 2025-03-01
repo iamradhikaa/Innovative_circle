@@ -1,52 +1,29 @@
 
+html body{
+    font-family: 'Roboto', sans-serif;
+}
 
-body {
-    background-image: url('../images/ba.jpg');
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;    
-    background-position: center;   
-    height: 100vh;                
-    font-family: 'Poppins', sans-serif;
-    color: #675f5f;
-    overflow: hidden;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+.contact-container {
+    background-color: #c6cef4;
+    opacity: 0.8;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    margin: 40px 20px 40px auto; 
+    display: flex; 
+    flex-direction: column; 
+    
     
 }
 
 
-
-
-.contact-container {
-    background-color: #c6cef4;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
-    max-width: 500px;           
-    width: 100%;                 /* Makes the container responsive */
-    animation: slideIn 1s ease-out; /* Slide-in animation */
-    
-    position: fixed;             /* Fixed positioning */
-    right: 0;                    /* Align the container to the right */
-    top: 60%;                    /* Vertically center it in the viewport */
-    transform: translateY(-50%); 
-            /* Adds margin on the top */
-  margin-bottom: 20px;         /* Adds margin on the bottom */
-  margin-left: 10px; 
-  margin-right: 20px;  
-  }
-  
-
-
 h1 {
     text-align: center;
-    color: #e34e4e;
-    font-size: 2rem;
+
+    font-size: 3rem;
     margin-bottom: 20px;
-    animation: fadeIn 2s ease-in-out; 
 }
 
 
@@ -55,11 +32,8 @@ h1 {
     flex-direction: column;
 }
 
-
 .input-container {
     margin-bottom: 20px;
-    opacity: 0;
-    animation: fadeIn 1s ease-in-out forwards 0.5s; /* Fade-in animation for inputs */
 }
 
 label {
@@ -75,10 +49,7 @@ input, textarea {
     border: 1px solid #ccc;
     font-size: 1rem;
     transition: border 0.3s ease;
-    opacity: 0;
-    animation: fadeIn 1s ease-in-out forwards 0.7s; /* Fade-in animation for input fields */
 }
-
 
 input:focus, textarea:focus {
     border-color: #4CAF50;
@@ -100,7 +71,6 @@ button.send-button {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    animation: bounce 0.5s ease-in-out infinite; /* Infinite bouncing animation */
 }
 
 button.send-button:hover {
@@ -113,42 +83,49 @@ button.send-button:active {
 }
 
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Slide-in animation for form container */
-@keyframes slideIn {
-    from {
-        transform: translateY(50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
 .text {
-    background-color: #f2d7da;  
-    padding: 20px;              
-    border-radius: 8px;        
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  
-    max-width: 800px;           
-    margin: 20px;               
-    position: relative;         
-    left: 0;                  
-  }
-  
-  .text h2 {
-    font-size: 1.2rem;          
-        color: #333;               
-    line-height: 1.5;           
-    margin: 0;                  
-  }
-  
+    background-color: #f2d7da;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    margin: 10px;
+    position: absolute;
+    left: 20px;
+    top: 40%;
+    transform: translateY(-50%);
+}
 
+.text h2 {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.5;
+    margin: 0;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .contact-container {
+        position: static;
+        transform: none;
+        margin: 20px auto;
+        width: 90%;
+    }
+
+    .text {
+        position: static;
+        transform: none;
+        margin: 20px auto;
+        width: 90%;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
